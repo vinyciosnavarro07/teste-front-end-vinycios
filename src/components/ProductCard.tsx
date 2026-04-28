@@ -8,14 +8,29 @@ interface Props {
 
 export function ProductCard({ product, onClick }: Props) {
   return (
-    <article className="product-card" onClick={() => onClick(product)}>
+    <article
+      className="product-card"
+      onClick={() => onClick(product)}
+    >
       <img src={product.photo} alt={product.productName} />
 
-      <h2>{product.productName}</h2>
+      <h2 className="product-card__title">
+        {product.productName}
+      </h2>
 
-      <p className="price">R$ {product.price}</p>
+      <p className="product-card__price">
+        R$ {product.price}
+      </p>
 
-      <button>Ver mais</button>
+      <button
+        className="product-card__button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick(product);
+        }}
+      >
+        Ver mais
+      </button>
     </article>
   );
 }

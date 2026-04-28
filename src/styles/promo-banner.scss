@@ -1,0 +1,54 @@
+.promo-banner {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.promo-banner__card {
+  position: relative;
+  height: 250px;
+
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.promo-banner__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.promo-banner__content {
+  position: relative;
+  z-index: 1;
+
+  color: #fff;
+  padding: 24px;
+  max-width: 400px;
+}
+
+.promo-banner__content h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.promo-banner__content p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.promo-banner__content button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+}

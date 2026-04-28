@@ -1,9 +1,22 @@
 import { useEffect, useState } from 'react';
+
 import { getProducts } from '../services/api';
-import { ProductCard } from '../components/ProductCard';
 import type { Product } from '../types/Product';
-import '../styles/home.scss';
+
+import { TopBar } from '../components/TopBar';
+import { Header } from '../components/Header';
+import { CategoryMenu } from '../components/CategoryMenu';
+import { HeroBanner } from '../components/HeroBanner';
+import { CategoryGrid } from '../components/CategoryGrid';
+import { ProductCarousel } from '../components/ProductCarousel';
 import { ProductModal } from '../components/ProductModal';
+import { PromoSection } from '../components/PromoSection';
+import { BrandSection } from '../components/BrandSection';
+import { NewsletterSection } from '../components/NewsletterSection';
+import { Footer } from '../components/Footer';
+
+import '../styles/global.scss';
+import '../styles/home.scss';
 
 export function Home() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -15,10 +28,6 @@ export function Home() {
             .catch(console.error);
     }, []);
 
-    const handleClick = (product: Product) => {
-        setSelectedProduct(product);
-    };
-
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
@@ -27,30 +36,68 @@ export function Home() {
         };
 
         window.addEventListener('keydown', handleEsc);
-
         return () => window.removeEventListener('keydown', handleEsc);
     }, []);
 
+    const handleProductClick = (product: Product) => {
+        setSelectedProduct(product);
+    };
+
     return (
-        <main>
-            <h1>Vitrine de Produtos</h1>
+        <div className="page">
 
-            <section className="products-grid">
-                {products.map((product) => (
-                    <ProductCard
-                        key={product.productId}
-                        product={product}
-                        onClick={handleClick}
-                    />
-                ))}
-            </section>
+            {/* HEADER GLOBAL */}
+            <TopBar />
+            <Header />
+            <CategoryMenu />
 
+            {/* HERO */}
+            <HeroBanner />
+
+            {/* CATEGORIAS */}
+            <CategoryGrid />
+
+            {/* CARROSSEL PRINCIPAL */}
+            <main className="container">
+
+                <ProductCarousel
+                title="Produtos relacionados"
+                products={products}
+                showCategories
+                onProductClick={handleProductClick}
+                />
+
+
+                <PromoSection />
+
+                <ProductCarousel
+                    title="Mais vendidos"
+                    products={products}
+                />
+
+                <PromoSection />
+
+                <BrandSection />
+
+                <ProductCarousel
+                    title="Mais vendidos"
+                    products={products}
+                />
+
+                <NewsletterSection />
+
+                <Footer />
+
+            </main>
+
+            {/* MODAL GLOBAL */}
             {selectedProduct && (
                 <ProductModal
                     product={selectedProduct}
                     onClose={() => setSelectedProduct(null)}
                 />
             )}
-        </main>
+
+        </div>
     );
 }

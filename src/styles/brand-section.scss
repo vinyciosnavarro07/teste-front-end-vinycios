@@ -1,0 +1,53 @@
+.brand-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.brand-section__header {
+  margin-bottom: 20px;
+}
+
+.brand-section__header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand-section__list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand-section__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-section__circle {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.brand-section__circle:hover {
+  transform: translateY(-4px);
+}
+
+.brand-section__circle img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
