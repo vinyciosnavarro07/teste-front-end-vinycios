@@ -22,3 +22,13 @@
     color: var(--color-grey);
   }
 }
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+}

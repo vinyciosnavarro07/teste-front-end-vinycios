@@ -3,6 +3,13 @@
   border-bottom: 1px solid #eee;
 }
 
+.category-menu__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .category-menu__list {
   display: flex;
   justify-content: center;
@@ -20,6 +27,8 @@
   cursor: pointer;
   color: var(--color-grey);
   text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
 
   transition: color 0.2s ease;
 
@@ -31,4 +40,109 @@
 .category-menu__item:nth-child(6) {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+/* =========================
+   MOBILE NAVIGATION ARROWS
+========================= */
+
+.category-menu__arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  background: linear-gradient(90deg, var(--color-surface), rgba(255, 255, 255, 0.8));
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  
+  &:hover {
+    background: linear-gradient(90deg, var(--color-surface), var(--color-surface));
+    color: var(--color-primary);
+  }
+
+  &--left {
+    left: 0;
+    padding-right: 4px;
+  }
+
+  &--right {
+    right: 0;
+    padding-left: 4px;
+  }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 1024px) {
+  .category-menu__list {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-menu__container {
+    position: relative;
+  }
+
+  .category-menu__list {
+    display: flex;
+    gap: 24px;
+    padding: 12px 40px;
+    margin: 0;
+    
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .category-menu__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-menu__item {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-menu__list {
+    gap: 16px;
+    padding: 8px 36px;
+  }
+
+  .category-menu__arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+
+    &--left {
+      left: 2px;
+    }
+
+    &--right {
+      right: 2px;
+    }
+  }
+
+  .category-menu__item {
+    font-size: 12px;
+  }
 }
