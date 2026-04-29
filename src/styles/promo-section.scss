@@ -1,0 +1,9 @@
+.promo-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 13px;
+
+  max-width: 1200px;
+  margin: 65px auto;
+}
