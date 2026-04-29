@@ -29,7 +29,6 @@ export function Header() {
         <>
             <header className="header">
                 <div className="container header__content">
-                    {/* Menu hambúrguer - Mobile */}
                     <button 
                         className="header__menu-toggle" 
                         onClick={toggleMenu}
@@ -81,7 +80,6 @@ export function Header() {
                     </div>
                 </div>
 
-                {/* Menu Mobile */}
                 {isMenuOpen && (
                     <nav className="header__mobile-menu">
                         <ul className="header__mobile-menu-list">
@@ -97,7 +95,6 @@ export function Header() {
                 )}
             </header>
 
-            {/* Overlay para fechar menu */}
             {isMenuOpen && (
                 <div 
                     className="header__overlay" 

@@ -42,9 +42,6 @@
   font-weight: 600;
 }
 
-/* =========================
-   MOBILE NAVIGATION ARROWS
-========================= */
 
 .category-menu__arrow {
   display: none;
@@ -78,10 +75,6 @@
     padding-left: 4px;
   }
 }
-
-/* =========================
-   RESPONSIVE - MOBILE
-========================= */
 
 @media (max-width: 1024px) {
   .category-menu__list {
