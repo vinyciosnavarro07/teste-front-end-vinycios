@@ -9,15 +9,24 @@
 }
 
 .brand-section__header h2 {
-  font-size: 20px;
-  font-weight: bold;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: var(--color-primary);
+    font-size: 30px;
+    font-weight: bold;
+    gap: 16px;
 }
 
 .brand-section__list {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
+
 
 .brand-section__item {
   display: flex;
@@ -25,29 +34,42 @@
   align-items: center;
 }
 
-.brand-section__circle {
-  width: 100px;
-  height: 100px;
 
+.brand-section__circle {
+  width: 211px;
+  height: 211px;
   border-radius: 50%;
+
   background: #fff;
+  border: 1px solid #eee;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13);
 
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.25s ease;
+
+  overflow: hidden;
 }
+
 
 .brand-section__circle:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
+
 .brand-section__circle img {
-  max-width: 60%;
-  max-height: 60%;
+  width: 117px;
+  height: 34px;
   object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+
+.brand-section__circle:hover img {
+  transform: scale(1.05);
 }

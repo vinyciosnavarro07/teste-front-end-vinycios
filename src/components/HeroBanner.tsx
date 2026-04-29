@@ -11,15 +11,15 @@ export function HeroBanner() {
       <div className="hero__content">
 
         <h1 className="hero__title">
-          Super ofertas para você
+          Venha conhecer nossas<br></br>promoções
         </h1>
 
         <p className="hero__subtitle">
-          Os melhores produtos com os melhores preços do mercado
+          <span className='hero__span__color'>50% off</span> nos produtos
         </p>
 
         <button className="hero__button">
-          Comprar agora
+          Ver Produto
         </button>
 
       </div>

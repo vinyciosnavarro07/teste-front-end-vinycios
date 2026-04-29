@@ -1,7 +1,6 @@
 .footer {
-  background: #000;
-  color: #fff;
-  margin-top: 40px;
+  background: var(--color-bg);
+  
 }
 
 .footer__container {
@@ -12,6 +11,11 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
+}
+
+.footer__logo-img{
+  width: 164px;
+  height: 48px;
 }
 
 .footer__brand {
@@ -27,17 +31,18 @@
 
 .footer__description {
   font-size: 14px;
-  color: #ccc;
+  color: var(--color-text-footer);
+  font-weight: var(--font-weight-light);
 }
 
 .footer__social {
   display: flex;
-  gap: 12px;
+  gap: 24px;
 }
 
 .footer__social a {
   font-size: 14px;
-  color: #fff;
+  color: #ff0000;
   text-decoration: none;
 }
 
@@ -48,6 +53,8 @@
 }
 
 .footer__column h3 {
+  color: var(--color-text-footer);
+  font-weight: var(--font-weight-bolder);
   font-size: 16px;
   margin-bottom: 10px;
 }
@@ -63,12 +70,13 @@
 
 .footer__column a {
   font-size: 14px;
-  color: #ccc;
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-footer);
   text-decoration: none;
 }
 
 .footer__column a:hover {
-  color: #fff;
+  color: var(--color-text);
 }
 
 .footer__bottom {

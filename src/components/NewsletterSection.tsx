@@ -27,32 +27,36 @@ export function NewsletterSection() {
 
       <div className="newsletter__container">
 
-        {/* TEXTO */}
         <div className="newsletter__content">
-          <h2>Assine nossa newsletter</h2>
+          <h2>Inscreva-se na nossa newsletter</h2>
           <p>
-            Receba ofertas exclusivas, novidades e descontos diretamente no seu e-mail.
+            Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.
           </p>
         </div>
 
-        {/* FORM */}
         <form className="newsletter__form" onSubmit={handleSubmit}>
 
-          <input
-            type="text"
-            placeholder="Digite seu nome"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <div className="newsletter__row">
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
 
-          <input
-            type="email"
-            placeholder="Digite seu e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+            <input
+              type="email"
+              placeholder="Digite seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            <button type="submit">
+              Inscrever
+            </button>
+          </div>
 
           <label className="newsletter__checkbox">
             <input
@@ -60,14 +64,8 @@ export function NewsletterSection() {
               checked={accepted}
               onChange={(e) => setAccepted(e.target.checked)}
             />
-            <span>
-              Aceito os termos e condições
-            </span>
+            <span> Aceito os termos e condições</span>
           </label>
-
-          <button type="submit">
-            Inscrever
-          </button>
 
         </form>
 

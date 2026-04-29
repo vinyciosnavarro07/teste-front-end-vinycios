@@ -6,21 +6,29 @@
 .category-menu__list {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 65px;
 
   list-style: none;
   padding: 12px 0;
   margin: 0;
+
+  font-weight: var(--font-weight-medium);
 }
 
 .category-menu__item {
   font-size: 14px;
   cursor: pointer;
-  color: #333;
+  color: var(--color-grey);
+  text-transform: uppercase;
 
   transition: color 0.2s ease;
 
   &:hover {
     color: #000;
   }
+}
+
+.category-menu__item:nth-child(6) {
+  color: var(--color-primary);
+  font-weight: 600;
 }

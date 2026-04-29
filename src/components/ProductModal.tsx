@@ -1,4 +1,5 @@
 import type { Product } from '../types/Product';
+import { useState } from 'react';
 import '../styles/product-modal.scss';
 
 interface Props {
@@ -7,7 +8,17 @@ interface Props {
 }
 
 export function ProductModal({ product, onClose }: Props) {
+  const [quantity, setQuantity] = useState(1);
+
   if (!product) return null;
+
+  const increase = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decrease = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -19,13 +30,41 @@ export function ProductModal({ product, onClose }: Props) {
           X
         </button>
 
-        <img src={product.photo} alt={product.productName} />
+        <div className="modal-body">
+          <div className="modal-image">
+            <img src={product.photo} alt={product.productName} />
+          </div>
 
-        <h2>{product.productName}</h2>
+          <div className="modal-info">
+            <h2>{product.productName}</h2>
 
-        <p>{product.descriptionShort}</p>
+            <p className="price">R$ {product.price}</p>
 
-        <p className="price">R$ {product.price}</p>
+            <p>{product.descriptionShort}</p>
+
+            <p className="detail">
+              Veja mais detalhes do produto &gt;
+            </p>
+
+            <div className="modal-actions">
+              
+              <div className="quantity">
+                <button onClick={decrease}>-</button>
+
+                <span>{String(quantity).padStart(2, '0')}</span>
+
+                <button onClick={increase}>+</button>
+              </div>
+
+              <button className="buy-button">
+                Comprar
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
       </article>
     </div>
   );

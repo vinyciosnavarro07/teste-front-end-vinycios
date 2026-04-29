@@ -1,6 +1,7 @@
 import '../styles/category-menu.scss';
 
 const categories = [
+  'Todas categorias',
   'Supermercado',
   'Livros',
   'Moda',

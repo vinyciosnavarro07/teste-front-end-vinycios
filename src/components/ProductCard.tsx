@@ -7,6 +7,8 @@ interface Props {
 }
 
 export function ProductCard({ product, onClick }: Props) {
+  const oldPrice = product.price * 1.2;
+
   return (
     <article
       className="product-card"
@@ -14,13 +16,28 @@ export function ProductCard({ product, onClick }: Props) {
     >
       <img src={product.photo} alt={product.productName} />
 
-      <h2 className="product-card__title">
-        {product.productName}
-      </h2>
-
-      <p className="product-card__price">
-        R$ {product.price}
+      <p className="product-card__description">
+        {product.descriptionShort}
       </p>
+
+      <div className="product-card__price-wrapper">
+        <span className="product-card__old-price">
+          R$ {oldPrice}
+        </span>
+
+        <span className="product-card__price">
+          R$ {product.price}
+        </span>
+
+        <span className="product-card__installment">
+          ou 2x de R$ {(product.price / 2).toFixed(2)}
+        </span>
+
+        <span className="product-card__shipping">
+          Frete grátis
+        </span>
+        
+      </div>
 
       <button
         className="product-card__button"
@@ -29,7 +46,7 @@ export function ProductCard({ product, onClick }: Props) {
           onClick(product);
         }}
       >
-        Ver mais
+        Comprar
       </button>
     </article>
   );

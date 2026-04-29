@@ -1,4 +1,8 @@
 import '../styles/footer.scss';
+import logoImg from '../assets/logo.png';
+import instagramImg from '../assets/icons/instagram.png';
+import facebookImg from '../assets/icons/facebook.png';
+import linkedinImg from '../assets/icons/linkedin.png';
 
 export function Footer() {
   return (
@@ -7,16 +11,23 @@ export function Footer() {
       <div className="footer__container">
 
         <div className="footer__brand">
-          <h2 className="footer__logo">Econverse</h2>
+          <img src={logoImg} alt="Econverse" className="footer__logo-img" />
+
 
           <p className="footer__description">
             A melhor plataforma para encontrar produtos com os melhores preços do mercado.
           </p>
 
           <div className="footer__social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">LinkedIn</a>
+            <a href="#">
+              <img src={instagramImg} alt="Instagram" />
+            </a>
+            <a href="#">
+              <img src={facebookImg} alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src={linkedinImg} alt="LinkedIn" />
+            </a>
           </div>
         </div>
 

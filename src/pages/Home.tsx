@@ -46,18 +46,18 @@ export function Home() {
     return (
         <div className="page">
 
-            {/* HEADER GLOBAL */}
+            
             <TopBar />
             <Header />
             <CategoryMenu />
 
-            {/* HERO */}
+            
             <HeroBanner />
 
-            {/* CATEGORIAS */}
+            
             <CategoryGrid />
 
-            {/* CARROSSEL PRINCIPAL */}
+            
             <main className="container">
 
                 <ProductCarousel
@@ -71,8 +71,10 @@ export function Home() {
                 <PromoSection />
 
                 <ProductCarousel
-                    title="Mais vendidos"
-                    products={products}
+                title="Produtos relacionados"
+                products={products}
+                onProductClick={handleProductClick}
+                subtitle="Ver todos"
                 />
 
                 <PromoSection />
@@ -80,17 +82,18 @@ export function Home() {
                 <BrandSection />
 
                 <ProductCarousel
-                    title="Mais vendidos"
-                    products={products}
+                title="Produtos relacionados"
+                products={products}
+                onProductClick={handleProductClick}
+                subtitle="Ver todos"
                 />
 
-                <NewsletterSection />
 
-                <Footer />
 
             </main>
-
-            {/* MODAL GLOBAL */}
+                <NewsletterSection />
+                <Footer />
+                
             {selectedProduct && (
                 <ProductModal
                     product={selectedProduct}

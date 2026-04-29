@@ -1,20 +1,21 @@
 import { PromoBanner } from './PromoBanner';
 import '../styles/promo-section.scss';
 
+import banner1 from '../assets/parceiros.png';
+
 export function PromoSection() {
   return (
     <section className="promo-section">
 
       <PromoBanner
-        image="/images/banner1.jpg"
-        title="Super ofertas"
-        description="Os melhores produtos com desconto"
+        image={banner1}
+        title="Parceiros"
+        description="Confira nossos parceiros e aproveite as ofertas."
       />
-
       <PromoBanner
-        image="/images/banner2.jpg"
-        title="Novidades"
-        description="Confira os lançamentos"
+        image={banner1}
+        title="Parceiros"
+        description="Confira nossos parceiros e aproveite as ofertas."
       />
 
     </section>
